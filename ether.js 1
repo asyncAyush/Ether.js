@@ -1,0 +1,16 @@
+const { ethers, JsonRpcProvider } = require('ethers');
+const provider = new ethers.providers.JsonRpcProvider(
+    'https://mainnet.infura.io/v3/dbcaa80bcd6846dd9728e3800ef2f7fc'
+);
+
+const querryBlockchain = async () => {
+    const block = await provider.getBlockNumber();
+    console.log("Current Block Number:", block);
+    const balance = await provider.getBalance(
+        "0x354c45F5fE8F6596236474FD2ec55c615600343d"
+    );
+    console.log ("Account Balance:", balance);
+    const baanceEther = ether.utils.formatEther(balance);
+    console.log ("Account balance in ether", balanceEther);
+};
+querryBlockchain();
